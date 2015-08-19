@@ -172,7 +172,7 @@ pip install luiti
 或者最新源码
 
 ```bash
-git clone https://github.com/17zuoye/luiti.git
+git clone https://github.com/luiti/luiti.git
 cd luiti
 python setup.py install
 ```

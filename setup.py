@@ -20,7 +20,7 @@ package_data += ["luiti/webui/index.html"]
 setup(
     name='luiti',
     version='0.2.1',
-    url='http://github.com/17zuoye/luiti/',
+    url='http://github.com/luiti/luiti/',
     license='MIT',
     author='David Chen',
     author_email=''.join(reversed("moc.liamg@emojvm")),

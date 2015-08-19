@@ -1,8 +1,8 @@
 Luiti
 ========================
-[![Build Status](https://img.shields.io/travis/17zuoye/luiti/master.svg?style=flat)](https://travis-ci.org/17zuoye/luiti)
-[![Coverage Status](https://coveralls.io/repos/17zuoye/luiti/badge.svg)](https://coveralls.io/r/17zuoye/luiti)
-[![Health](https://landscape.io/github/17zuoye/luiti/master/landscape.svg?style=flat)](https://landscape.io/github/17zuoye/luiti/master)
+[![Build Status](https://img.shields.io/travis/luiti/luiti/master.svg?style=flat)](https://travis-ci.org/luiti/luiti)
+[![Coverage Status](https://coveralls.io/repos/luiti/luiti/badge.svg)](https://coveralls.io/r/luiti/luiti)
+[![Health](https://landscape.io/github/luiti/luiti/master/landscape.svg?style=flat)](https://landscape.io/github/luiti/luiti/master)
 [![Download](https://img.shields.io/pypi/dm/luiti.svg?style=flat)](https://pypi.python.org/pypi/luiti)
 [![License](https://img.shields.io/pypi/l/luiti.svg?style=flat)](https://pypi.python.org/pypi/luiti)
 
@@ -92,13 +92,13 @@ Here's some screenshots from example_webui_run.py, just to give you an
 idea of how luiti's multiple Python packages works.
 
 1. Luiti WebUI list
-![Luiti WebUI list](https://raw.githubusercontent.com/17zuoye/luiti/master/screenshots/luiti_webui_list.png)
+![Luiti WebUI list](https://raw.githubusercontent.com/luiti/luiti/master/screenshots/luiti_webui_list.png)
 
 2. Luiti WebUI show
-![Luiti WebUI show](https://raw.githubusercontent.com/17zuoye/luiti/master/screenshots/luiti_webui_show.png)
+![Luiti WebUI show](https://raw.githubusercontent.com/luiti/luiti/master/screenshots/luiti_webui_show.png)
 
 3. Luiti Code show
-![Luiti Code show](https://raw.githubusercontent.com/17zuoye/luiti/master/screenshots/luiti_code_show.png)
+![Luiti Code show](https://raw.githubusercontent.com/luiti/luiti/master/screenshots/luiti_code_show.png)
 
 
 Core concepts based on time management
@@ -344,7 +344,7 @@ pip install luiti
 Or lastest source code
 
 ```bash
-git clone https://github.com/17zuoye/luiti.git
+git clone https://github.com/luiti/luiti.git
 cd luiti
 python setup.py install
 ```
@@ -575,7 +575,7 @@ customize parameters are the values.
 
 
 If you have other unresolved questions, please feel free to ask
-questions at [issues](https://github.com/17zuoye/luiti/issues).
+questions at [issues](https://github.com/luiti/luiti/issues).
 
 
 Run tests
@@ -598,4 +598,4 @@ Please let us know if your company wants to be featured on this list!
 
 License
 ------------------------
-MIT. David Chen @ 17zuoye.
+MIT. David Chen @ luiti.

@@ -35,7 +35,7 @@ script:
   - coverage run --source=luiti setup.py test
 
 after_failure:
-  - cat /home/travis/build/17zuoye/luiti/.tox/cdh/log/cdh-1.log
+  - cat /home/travis/build/luiti/luiti/.tox/cdh/log/cdh-1.log
 
 after_success:
   - coveralls

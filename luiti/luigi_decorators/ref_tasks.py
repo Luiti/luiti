@@ -38,6 +38,7 @@ def ref_tasks(*tasks):  # 装饰器
             return v1
         return _func
 
+    # Fix pickle dump, but it maybe unneeded.
     def __getstate__(self):
         """ Fix luiti_tasks module namespace conflicts. """
         for ref_task1 in self._ref_tasks:
