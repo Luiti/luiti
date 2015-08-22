@@ -42,7 +42,7 @@ Document guide
 6. [Manage multiple projects in luiti](#manage-multiple-projects-in-luiti)
 7. [A simple guide to Luigi](#a-simple-guide-to-luigi)
 8. [A simple example in luiti](#a-simple-example-in-luiti)
-9. [Installment & Development](#installment--develop-requirements)
+9. [Installment and Development](#installment-and-develop-requirements)
 10. [Task recommendation](#task-recommendation)
 11. [Task decorators](#task-decorators)
 12. [MapReduce related](#mapreduce-related)
@@ -335,7 +335,7 @@ Yes, it's almost no difference to luigi, except the `self.days_in_week`
 property and `@luigi.ref_tasks` decorator.
 
 
-Installment & Develop requirements
+Installment and Develop requirements
 ------------------------
 #### Installment
 ```bash
