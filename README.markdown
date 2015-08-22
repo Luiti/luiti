@@ -1,4 +1,4 @@
-![Luiti](https://raw.githubusercontent.com/Luiti/luiti.github.io/master/images/luiti/luiti_square_logo.png)
+![Luiti](https://raw.githubusercontent.com/Luiti/luiti.github.io/master/images/luiti/luiti_rectangle_logo.png)
 ========================
 [![Build Status](https://travis-ci.org/Luiti/luiti.svg?branch=master)](https://travis-ci.org/luiti/luiti)
 [![Coverage Status](https://coveralls.io/repos/Luiti/luiti/badge.svg?branch=master&service=github)](https://coveralls.io/github/Luiti/luiti?branch=master)
