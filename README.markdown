@@ -17,11 +17,11 @@ can be managed by the `luiti` command, supported operations are ls, new,
 generate, info, clean, run, and webui.
 
 Luiti is born to build **a layered database warehouse**, corresponding to
-the different packages we just mentioned. A data warehouse is consisted
+the different packages we just mentioned. A data warehouse consists
 of synced data sources, fact tables, dimension tables, regular or
 temporary business reports.
 
-The essence of batching processing system is to separating a large task
+The essence of batching processing system is to separate a large task
 into small tasks, and the essence of business report is that a daily
 report or a weekly report is requried, so here comes TaskDay, TaskWeek,
 and more. Task classes also have a Hadoop version, such as TaskDayHadoop,
@@ -184,7 +184,7 @@ a project like above.
 luiti new --project-name project_A
 ```
 
-If other luiti projects needs to using this package, and you need to
+If other luiti projects need to using this package, and you need to
 install this package, to make sure luiti could find them in the
 search path (`sys.path`) of Python modules.
 
@@ -201,13 +201,13 @@ indicate current Task to find `ArtistStreamDay` Task in current package
 
 A simple guide to Luigi
 ------------------------
-Luigi's core concept is forcing you separting a big task into many small
+Luigi's core concept is to force you to separte a big task into many small
 tasks, and they're linked by **atomic** Input and Ouput. Luigi contains four
 parts mainly:
 
 1. **Output**. It must be implemented in `output` function, such as `LocalTarget` and `hdfs.HdfsTarget`.
 2. **Input**. It must be implemented in `requires` function, and the
-  function supposed to return some or None task instances.
+  function is supposed to return some or None task instances.
 3. **Parameters**. Parameters should be inherited from `luigi.Parameter`,
   e.g. `DateParameter`, etc.
 4. **Execute Logic**. Use `run` function if running at local, or `mapper` and `reducer`
@@ -223,7 +223,7 @@ luigi will guarantee that task instances are uniq in current
 A simple example in luiti
 ------------------------
 #### An official example from luigi.
-Below code is copied from http://luigi.readthedocs.org/en/latest/example_top_artists.html
+Code below is copied from http://luigi.readthedocs.org/en/latest/example_top_artists.html
 
 ```python
 import luigi
@@ -458,7 +458,7 @@ delete the temporary file automatically.
 
 #### HDFS file object
 We recommend to use `TargetUtils.hdfs(path1)`. This function compacts
-with the MR file result data format that consists by "part-00000" file blocks.
+the MR file result data format that consists of "part-00000" file blocks.
 
 
 #### MapReduce test cases
