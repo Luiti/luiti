@@ -124,13 +124,18 @@ class SensorSchedule(object):
         def func(dep_dict, _curr_task):
             """ Generate a a dependencies graph. """
             required_task_instances = _curr_task.requires()
+
+            # 1. clean dep normal tasks as a list
             if not isinstance(required_task_instances, list):
                 required_task_instances = [required_task_instances]
             dep_dict[_curr_task] = filter(lambda t1: bool(t1) and (not isinstance(t1, RootTask)), required_task_instances)
+
+            # 2. selected undone tasks
             if self.check_output_recursive:
-                dep_dict[_curr_task] = filter(lambda t1: t1.output().exists(), dep_dict[_curr_task])
+                dep_dict[_curr_task] = filter(lambda t1: not t1.output().exists(), dep_dict[_curr_task])
             dep_dict[_curr_task] = set(dep_dict[_curr_task])
 
+            # 3. recursive
             for t1 in dep_dict[_curr_task]:
                 func(dep_dict, t1)
 
