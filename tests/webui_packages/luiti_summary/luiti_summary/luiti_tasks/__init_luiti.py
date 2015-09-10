@@ -21,6 +21,6 @@ luiti_visualiser_env = VisualiserEnvTemplate({
         }
     },
     "package_config": {
-        "defaults": ["luiti_summary", ],
+        "defaults": ["luiti_dump", "luiti_clean", "luiti_middle", "luiti_summary", ],
     }
 })
