@@ -197,7 +197,7 @@ class TestDaemon(unittest.TestCase):
         self.assertTrue("requires" in builder.graph_infos_data["json"])
         # ... to be continued.
 
-        self.assertEqual(QueryBuilder(PTM, {}).selected_query["luiti_package"], ["luiti_summary"])  # default
+        self.assertEqual(QueryBuilder(PTM, {}).selected_query["luiti_package"], ['luiti_dump', 'luiti_clean', 'luiti_middle', 'luiti_summary'])  # default
 
     def test_CodeRender(self):
         from luiti.daemon.web.code_render import CodeRender
