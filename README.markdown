@@ -428,10 +428,7 @@ Task decorators
 # 5. Check current task can be runned in current date range.
 @luigi.check_runtime_range(hour_num=[4,5,6], weekday_num=[1])
 
-# 6. Bind other output file names except for the default `date_file`, and compacts with cleaning temporary files is the task is failed.
-@luigi.persist_files(*files)
-
-# 7. Let Task Templates under [luigi.contrib](https://github.com/spotify/luigi/tree/master/luigi/contrib) to follow with Luiti's Task convertion.
+# 6. Let Task Templates under [luigi.contrib](https://github.com/spotify/luigi/tree/master/luigi/contrib) to follow with Luiti's Task convertion.
 @luigi.as_a_luiti_task()
 
 class AnotherBussinessDay(TaskDayHadoop):
