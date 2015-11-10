@@ -1,3 +1,7 @@
+### 0.2.2   - Nov 10, 2015
+* Add lots of test cases
+* Document wording
+
 ### 0.2.1   - July 15, 2015
 * Add SensorSchedule to wait external task to finish lazily.
 * Add WebUI screenshots.
