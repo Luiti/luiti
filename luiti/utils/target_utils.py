@@ -68,6 +68,6 @@ class HdfsClientClass(object):
     @cached_property
     def client(self):
         import luigi.hdfs
-        return luigi.hdfs.client
+        return luigi.hdfs.clients
 HdfsClient = HdfsClientClass()
 TargetUtils.HdfsClient = HdfsClient

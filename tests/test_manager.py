@@ -145,8 +145,8 @@ class TestManager(unittest.TestCase):
         from luiti.manager.lazy_data import ld
         self.assertTrue(len(Table.print_all_tasks(ld.result)[0]) > 6, """Example data is ([[1, 'ADay', 'project_A'], [2, 'BDay', 'project_A'], [3, 'CDay', 'project_A'], [4, 'DDay', 'project_A'], [5, 'FoobarDay', 'project_A'], [6, 'HDay', 'project_B'], [7, 'ImportPackagesDay', 'project_A'], [8, 'MultipleDependentDay', 'project_A'], ['total', 8, '']], ['', 'All Tasks', 'luiti_package'])""")
 
-    @mock.patch("luigi.hdfs.client.rename")
-    @mock.patch("luigi.hdfs.client.exists")
+    @mock.patch("luigi.hdfs.clients.rename")
+    @mock.patch("luigi.hdfs.clients.exists")
     def test_Files(self, exists, rename):
         from luiti.manager.files import Files
 

@@ -52,7 +52,7 @@ setup(
     platforms='any',
     install_requires=[
         # 1. luigi related
-        "luigi         == 1.1.2",
+        "luigi         >=2.0,<2.2",
         "snakebite>=2.5,<2.6",
         "protobuf>=2.6,<2.7",
         "tornado>=4.0,<4.1",

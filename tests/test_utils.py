@@ -111,6 +111,10 @@ class TestLuitiUtils(unittest.TestCase):
         self.assertEqual(fb1.property_1, "property_1")
         self.assertEqual(fb1.cached_property_1, "cached_property_1")
 
+        self.assertTrue(inspect.ismethod(Foobar.method_1))
+        self.assertTrue(isinstance(Foobar.property_1, property))
+        self.assertTrue(isinstance(Foobar.cached_property_1, cached_property), Foobar.cached_property_1)
+
         Foobar.extend({
             'not_exist_str': "not_exist_str",
             'method_1': lambda self: "method_2",
@@ -126,7 +130,7 @@ class TestLuitiUtils(unittest.TestCase):
         self.assertTrue(isinstance(Foobar.not_exist_str, str))
         self.assertTrue(inspect.ismethod(Foobar.method_1))
         self.assertTrue(isinstance(Foobar.property_1, property))
-        self.assertTrue(isinstance(Foobar.cached_property_1, cached_property))
+        self.assertTrue(isinstance(Foobar.cached_property_1, cached_property), Foobar.cached_property_1)
 
     @mock.patch("luigi.hdfs.exists")
     @mock.patch("luigi.hdfs.remove")

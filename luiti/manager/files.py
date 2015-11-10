@@ -33,8 +33,8 @@ class Files(object):
 
         for file1 in sorted(files):
             print "[delete file]", file1
-            if luigi.hdfs.client.exists(file1):
-                luigi.hdfs.client.rename(file1, file1 + delete_at_str)
+            if luigi.hdfs.clients.exists(file1):
+                luigi.hdfs.clients.rename(file1, file1 + delete_at_str)
                 print
             else:
                 print "[err] doesnt exist!"

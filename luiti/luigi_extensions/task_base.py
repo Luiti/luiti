@@ -39,6 +39,12 @@ class TaskBase(luigi.Task, ExtUtils.ExtendClass):
     run = NotImplementedError
 
     def __init__(self, *args, **kwargs):
+        # Fix date_value type
+        if "date_value" in kwargs:
+            kwargs["date_value"] = ArrowParameter.get(kwargs["date_value"])
+        if len(args) == 1:  # just the luiti's date_value parameter
+            args = (ArrowParameter.get(args[0]), )
+
         super(TaskBase, self).__init__(*args, **kwargs)
         TaskInit.setup(self)
 
