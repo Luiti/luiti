@@ -23,7 +23,7 @@ temporary business reports.
 
 The essence of batching processing system is to separate a large task
 into small tasks, and the essence of business report is that a daily
-report or a weekly report is requried, so here comes TaskDay, TaskWeek,
+report or a weekly report is required, so here comes TaskDay, TaskWeek,
 and more. Task classes also have a Hadoop version, such as TaskDayHadoop,
 TaskWeekHadoop, and so on.
 
@@ -64,10 +64,10 @@ usage: luiti [-h] {ls,new,generate,info,clean,run,webui} ...
 
 Luiti tasks manager.
 
-optional arguments:
+Optional arguments:
   -h, --help            show this help message and exit
 
-subcommands:
+Subcommands:
   valid subcommands
 
   {ls,new,generate,info,clean,run,webui}
@@ -77,7 +77,7 @@ subcommands:
     info                show a detailed task.
     clean               manage files that outputed by luiti tasks.
     run                 run a luiti task.
-    webui               start a luiti DAG visualiser.
+    webui               start a luiti DAG visualizer.
 ```
 
 Luiti WebUI screenshots
@@ -133,7 +133,7 @@ Task specification and built-in properties and recommendation
 ### Task naming conventions
 1. One Task class per file.
 2. Task class should be camel case ( e.g. `EnglishStudentAllExamWeek`), file name should be low case with underscore ( e.g.  `english_student_all_exam_week.py` ).
-3. Task files should be under the directory of `luiti_tasks`. luiti use this convertion to linking tasks inner and outer of pacakges.
+3. Task files should be under the directory of `luiti_tasks`. luiti use this convertion to linking tasks inner and outer of packages.
 4. Task class name should be ended with date type, e.g. Day, Week, etc.  Please refer to `TaskBase.DateTypes`.
 
 
@@ -150,7 +150,7 @@ Task specification and built-in properties and recommendation
 9. `date_value_by_type_in_end`. If current date type is Week, and it'll return Sunday 11:59:59 clock in the current week.
 10. `pre_task_by_self`. Usually it returns previous task in the current date type. If reaches the time boundary of current date type, it returns RootTask.
 11. `is_reach_the_edge`. It's semester at 17zuoye business.
-12. `instances_by_date_range`. Class function, return all task intances list that belongs to current date range.
+12. `instances_by_date_range`. Class function, return all task instances list that belongs to current date range.
 13. `task_class`. Return current task class.
 
 
@@ -184,12 +184,12 @@ a project like above.
 luiti new --project-name project_A
 ```
 
-If other luiti projects need to using this package, and you need to
+If other luiti projects need to use this package, and you need to
 install this package, to make sure luiti could find them in the
 search path (`sys.path`) of Python modules.
 
 
-#### How to link current Task to another Task that belongs to another pacakge?
+#### How to link current Task to another Task that belongs to another package?
 Every luiti projects share the same structure, e.g.
 `project_A/luiti_tasks/another_feature_day.py`. After config
 `luigi.plug_packages("project_B", "project_C==0.0.2"])` in
@@ -201,8 +201,8 @@ indicate current Task to find `ArtistStreamDay` Task in current package
 
 A simple guide to Luigi
 ------------------------
-Luigi's core concept is to force you to separte a big task into many small
-tasks, and they're linked by **atomic** Input and Ouput. Luigi contains four
+Luigi's core concept is to force you to separate a big task into many small
+tasks, and they're linked by **atomic** Input and Output. Luigi contains four
 parts mainly:
 
 1. **Output**. It must be implemented in `output` function, such as `LocalTarget` and `hdfs.HdfsTarget`.
@@ -217,7 +217,7 @@ After finish the business logic implementation and test cases, You can
 submit your task to the `luigid` background daemon. `luigid` will
 process task dependencies automatically, this is done by checking
 `output` is already `exists` (It's the Target class's function). And
-luigi will guarantee that task instances are uniq in current
+luigi will guarantee that task instances are unique in current
 `luigid` background process by the task class name and parameters.
 
 A simple example in luiti
@@ -293,7 +293,7 @@ class AggregateArtistsWeek(TaskWeek):
                 print >> out_file, artist, count
 ```
 
-Optimizition notes:
+Optimization notes:
 
 1. luiti's task class is built in with `date_value` property, and converted
   into `Arrow` data type.
@@ -362,7 +362,7 @@ Time library
 The time library is [Arrow](http://crsmithdev.com/arrow/) , every Task
 instance's `date_value` property is a arrow.Arrow type.
 
-luiti will convert date paramters into local time zone automatically. If
+luiti will convert date parameters into local time zone automatically. If
 you want to customize time, please prefer to use
  `ArrowParameter.get(*strs)` and `ArrowParameter.now()` to make sure you
  use the local time zone.
@@ -378,7 +378,7 @@ converts a function into a lazy property. The function wrapped is called
 the first time to retrieve the result and then that calculated result is
 used the next time you access the value".
 
-This function is heavily used in 17zuoye everyday, we use it to cache
+This function is heavily used in 17zuoye every day, we use it to cache
 lots of things, such as a big data dict.
 
 ```python
@@ -428,7 +428,7 @@ Task decorators
 # 5. Check current task can be runned in current date range.
 @luigi.check_runtime_range(hour_num=[4,5,6], weekday_num=[1])
 
-# 6. Let Task Templates under [luigi.contrib](https://github.com/spotify/luigi/tree/master/luigi/contrib) to follow with Luiti's Task convertion.
+# 6. Let Task Templates under [luigi.contrib](https://github.com/spotify/luigi/tree/master/luigi/contrib) to follow with Luiti's Task convention.
 @luigi.as_a_luiti_task()
 
 class AnotherBussinessDay(TaskDayHadoop):
@@ -549,7 +549,7 @@ TaskWeek.extend({
 `extend` class function compacts with `function`, `property`, `cached_property`,
 or any other attributes at the same time。When you want to overwrite
 `property` and `cached_property`, you just need a function value, and
-`extend` will automatically converted into `property` and
+`extend` will automatically convert them into `property` and
 `cached_property` type.
 
 
