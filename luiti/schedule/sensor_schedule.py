@@ -8,7 +8,7 @@ from ..luigi_extensions import ArrowParameter, RootTask
 
 
 """
-If all tasks's runtime and output wrapped in Luigi's concept, it's perfect. But sometimes Luigi has to wait other blackbox systems to run and output, and don't know when it'll finish.
+If all tasks' runtime and output wrapped in Luigi's concept, it's perfect. But sometimes Luigi has to wait for other black box systems to run and output, and don't know when it'll finish.
 
 It seems that we could time.sleep(a few seconds) to check that the output appears. But here comes the below errors:
 
@@ -29,7 +29,7 @@ IOError: [Errno 104] Connection reset by peer
 
 It doesn't work :-(
 
-Soon I found that [Airbnb](http://airbnb.com) released their open source project http://github.com/airbnb/airflow. Airflow has a Sensor concept, used to "Waits for events to happen. This could be a file appearing in HDFS, the existence of a Hive partition, or waiting for an arbitrary MySQL query to return a row. ". It's really great, but unfortunately it doesn't compact with Luigi. Here's the document http://pythonhosted.org/airflow/concepts.html#operators
+Soon I found that [Airbnb](http://airbnb.com) released their open source project http://github.com/airbnb/airflow. Airflow has a Sensor concept, used to "Waits for events to happen. This could be a file appearing in HDFS, the existence of a Hive partition, or waiting for an arbitrary MySQL query to return a row. ". It's really great, but, unfortunately it doesn't compact with Luigi. Here's the document http://pythonhosted.org/airflow/concepts.html#operators
 
 
 ----------------------------
@@ -40,7 +40,7 @@ At last, I found a new solution, inspired by `Luiti webui` and `Airflow`. We can
 
 class SensorSchedule(object):
     """
-    Fix luigi don't support uncontrolled external tasks, so schedule task submit by client luiti itself.
+    Fix luigi don't support uncontrolled external tasks, so schedule task submits by client luiti itself.
     """
 
     default_wait_seconds = 5
@@ -74,7 +74,7 @@ class SensorSchedule(object):
         # interface = ArgParseInterface()
         # interface.run(ss.ordered_task_instances_list)  # , worker_scheduler_factory, override_defaults=override_defaults) can be ignored.
         """
-        Raise below errors. It seems like submit related tasks to luigid work don't works.
+        Raise below errors. It seems like submit related tasks to luigid work don't work.
 
         Traceback (most recent call last):
           File "/home/luigi/deploy/mvj3.20150511/ENV/bin/luiti", line 4, in <module>
